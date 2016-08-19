@@ -31,6 +31,7 @@ public class EmployeeModel {
 
 	public List<Employee> listEmployee(String empNo) throws SQLException {
 		List<Employee> list = new ArrayList<Employee>();
+		String cond = null;
 		try {
 			StringBuilder sb = new StringBuilder();
 			sb.append("SELECT EMPNO,FIRSTNME,LASTNAME,HIREDATE FROM EMPLOYEE");
@@ -38,10 +39,13 @@ public class EmployeeModel {
 				sb.append(" WHERE EMPNO ");
 				if (empNo.contains("*")) {
 					sb.append("LIKE ?");
-					empNo = empNo.replaceAll("¥¥*", "%");
+					cond = empNo.replaceAll("\\*", "%");
 				} else {
 					sb.append("= ?");
 				}
+			}
+			if (cond!=null) {
+				empNo = cond;
 			}
 			PreparedStatement pstmt = connection.prepareStatement(sb.toString());
 			pstmt.setString(1, empNo);

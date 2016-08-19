@@ -25,7 +25,6 @@
 <tr><th bgcolor="aquamarine">給与</th><td><%= bean.getEntity().getSalary() %></td></tr>
 <tr><th bgcolor="aquamarine">賞与</th><td><%= bean.getEntity().getBonus() %></td></tr>
 <tr><th bgcolor="aquamarine">COMM</th><td><%= bean.getEntity().getComm() %></td></tr>
-<tr><th>イメージ</th><td><img alt="<%= bean.getEntity().getFirstNme() %>" src="getPhoto?empNo=<%= bean.getEntity().getEmpNo() %>"></td></tr>
 </table>
 <br><br>
 <a href="sample01?empNo=<%= bean.getEmpNo() %>">検索一覧に戻る</a>&nbsp;&nbsp;&nbsp;<a href="index.jsp">トップに戻る</a>

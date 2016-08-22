@@ -1,3 +1,6 @@
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
+ */
 package com.ibm.jp.sample.controller;
 
 import java.io.IOException;
@@ -14,9 +17,14 @@ import com.ibm.jp.sample.bean.DbSample02Bean;
 import com.ibm.jp.sample.model.EmployeeModel;
 
 /**
- * Servlet implementation class DbSample02Servlet
+ * 従業員詳細情報表示制御サーブレット
+ * <br><br>
+ * データソースは共通基底サーブレットクラス(DemoBaseServlet)で定義しています。
+ * 
+ * @author y_akamatsu
+ * @see DemoBaseServlet
  */
-@WebServlet({ "/DbSample02Servlet", "/sample02" })
+@WebServlet("/sample02")
 public class DbSample02Servlet extends DemoBaseServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String _DESTINATION = "/WEB-INF/jsp/sample02.jsp";

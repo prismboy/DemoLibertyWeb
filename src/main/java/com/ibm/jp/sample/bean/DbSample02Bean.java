@@ -1,5 +1,5 @@
-/**
- * 
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
  */
 package com.ibm.jp.sample.bean;
 
@@ -8,6 +8,8 @@ import java.io.Serializable;
 import com.ibm.jp.sample.entity.Employee;
 
 /**
+ * 従業員詳細情報表示画面用Beanクラス<br>
+ * 
  * @author y_akamatsu
  *
  */

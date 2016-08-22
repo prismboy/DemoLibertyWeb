@@ -1,3 +1,6 @@
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
+ */
 package com.ibm.jp.sample.controller;
 
 import java.io.IOException;
@@ -13,6 +16,10 @@ import javax.sql.DataSource;
 
 /**
  * デモ用サーブレットの基底クラス
+ * <br><br>
+ * データソースのインスタンスは、javax.annotation.Resourceアノテーションによりインジェクションしています。<br>
+ * <br>
+ * JNDI名：jdbc/sampleDB
  * 
  * @author y_akamatsu
  *

@@ -1,3 +1,6 @@
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
+ */
 package com.ibm.jp.sample.model;
 
 import java.sql.Connection;
@@ -12,7 +15,9 @@ import javax.sql.DataSource;
 import com.ibm.jp.sample.entity.Employee;
 
 /**
- * EMPLOYEE表を検索するロジッククラス
+ * EMPLOYEE表を検索するロジッククラス<br>
+ * <br>
+ * getInstanceメソッドを使用して、クラスをインスタンス化してください。
  * 
  * @author y_akamatsu
  *
@@ -23,12 +28,28 @@ public class EmployeeModel {
 	private EmployeeModel() {
 	}
 
+	/**
+	 * クラスをインスタンス化します。
+	 * 
+	 * @param dataSource データソース
+	 * @return 本クラスのインスタンス
+	 * @throws SQLException
+	 */
 	public static EmployeeModel getInstance(DataSource dataSource) throws SQLException {
 		EmployeeModel model = new EmployeeModel();
 		model.setConnection(dataSource.getConnection());
 		return model;
 	}
 
+	/**
+	 * 従業員一覧検索<br>
+	 * <br>
+	 * アスタリスク('*')を使用した部分一致検索が可能。
+	 * 
+	 * @param empNo 従業員番号
+	 * @return
+	 * @throws SQLException
+	 */
 	public List<Employee> listEmployee(String empNo) throws SQLException {
 		List<Employee> list = new ArrayList<Employee>();
 		String cond = null;
@@ -71,6 +92,15 @@ public class EmployeeModel {
 		return list;
 	}
 
+	/**
+	 * 従業員情報取得<br>
+	 * <br>
+	 * 完全一致検索を実行します。
+	 * 
+	 * @param empNo 従業員番号
+	 * @return
+	 * @throws SQLException
+	 */
 	public Employee getEmpInfo(String empNo) throws SQLException {
 		Employee bean = null;
 		try {
@@ -109,7 +139,7 @@ public class EmployeeModel {
 		return bean;
 	}
 
-	public void setConnection(Connection connection) {
+	private void setConnection(Connection connection) {
 		this.connection = connection;
 	}
 

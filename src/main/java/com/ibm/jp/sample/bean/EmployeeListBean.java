@@ -4,21 +4,23 @@
 package com.ibm.jp.sample.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.ibm.jp.sample.entity.Employee;
 
 /**
- * 従業員詳細情報表示画面用Beanクラス<br>
+ * 従業員一覧検索画面用Beanクラス<br>
+ * <br>
  * 
  * @author y_akamatsu
  *
  */
-public class DbSample02Bean implements Serializable {
+public class EmployeeListBean implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 8995341061494023634L;
+	private static final long serialVersionUID = -7985075847603752257L;
 
 	/**
 	 * お知らせ
@@ -31,14 +33,14 @@ public class DbSample02Bean implements Serializable {
 	private String empNo;
 
 	/**
-	 * 社員情報
+	 * 検索結果一覧
 	 */
-	private Employee entity;
+	private List<Employee> list;
 
 	/**
 	 * 
 	 */
-	public DbSample02Bean() {
+	public EmployeeListBean() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -58,12 +60,12 @@ public class DbSample02Bean implements Serializable {
 		this.empNo = empNo;
 	}
 
-	public final Employee getEntity() {
-		return entity;
+	public final List<Employee> getList() {
+		return list;
 	}
 
-	public final void setEntity(Employee entity) {
-		this.entity = entity;
+	public final void setList(List<Employee> list) {
+		this.list = list;
 	}
 
 }

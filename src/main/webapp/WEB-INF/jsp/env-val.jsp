@@ -8,10 +8,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>サンプル002</title>
+<title>ランタイム環境変数</title>
 </head>
 <body>
-<font size="+1" color="red">実行結果</font><br><br>
+<font size="+1" color="red">ランタイム環境変数</font><br><br>
 <table border="1" cellpadding="5" cellspacing="0">
 <%
 	Map<String, String> map = bean;

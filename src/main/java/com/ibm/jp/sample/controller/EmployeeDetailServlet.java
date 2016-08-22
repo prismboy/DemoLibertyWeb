@@ -24,7 +24,7 @@ import com.ibm.jp.sample.model.EmployeeModel;
  * @author y_akamatsu
  * @see DemoBaseServlet
  */
-@WebServlet("/sample02")
+@WebServlet("/empDetail")
 public class EmployeeDetailServlet extends DemoBaseServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String _DESTINATION = "/WEB-INF/jsp/employeedetail.jsp";

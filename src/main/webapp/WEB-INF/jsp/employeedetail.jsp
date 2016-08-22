@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Search Result</title>
+<title>従業員詳細</title>
 </head>
 <body>
 <font color="red"><b><%= bean.getMessage() %></b></font>
-<h2>従業員情報</h2><br>
+<h2>従業員詳細</h2><br>
 <table border="1" cellpadding="2" cellspacing="0">
 <tr><th bgcolor="aquamarine">従業員番号</th><td><%= bean.getEntity().getEmpNo() %></td></tr>
 <tr><th bgcolor="aquamarine">姓</th><td><%= bean.getEntity().getLastName() %></td></tr>
@@ -27,6 +27,6 @@
 <tr><th bgcolor="aquamarine">COMM</th><td><%= bean.getEntity().getComm() %></td></tr>
 </table>
 <br><br>
-<a href="sample01?empNo=<%= bean.getEmpNo() %>">検索一覧に戻る</a>&nbsp;&nbsp;&nbsp;<a href="index.jsp">トップに戻る</a>
+<a href="empList?empNo=<%= bean.getEmpNo() %>">検索一覧に戻る</a>&nbsp;&nbsp;&nbsp;<a href="index.jsp">トップに戻る</a>
 </body>
 </html>

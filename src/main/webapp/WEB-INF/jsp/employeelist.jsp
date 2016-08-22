@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>社員一覧検索</title>
+<title>従業員一覧検索</title>
 </head>
 <body>
 <font color="red"><b><%= bean.getMessage()!=null ? bean.getMessage() : "" %></b></font>
-<form action="sample01" method="post">
+<form action="empList" method="post">
 検索条件を入力してください。(ワイルドカード'*'が使用できます。)<br><br>
 従業員番号: <input type="text" name="empNo" value="<%= bean.getEmpNo() %>"><br><br>
 <input type="submit">
@@ -21,7 +21,7 @@
 <% 
 	int cnt = 0;
 	for(com.ibm.jp.sample.entity.Employee employee : bean.getList()) { %>
-<tr><td><a href="sample02?empNo=<%= employee.getEmpNo() %>&searchEmpNo=<%= bean.getEmpNo() %>"><%= employee.getEmpNo() %></a></td><td><%= employee.getLastName() %></td><td><%= employee.getFirstNme() %></td><td><%= employee.getHireDate() %></td></tr>
+<tr><td><a href="empDetail?empNo=<%= employee.getEmpNo() %>&searchEmpNo=<%= bean.getEmpNo() %>"><%= employee.getEmpNo() %></a></td><td><%= employee.getLastName() %></td><td><%= employee.getFirstNme() %></td><td><%= employee.getHireDate() %></td></tr>
 <% 
 		cnt++;
 		if(cnt>=20) {

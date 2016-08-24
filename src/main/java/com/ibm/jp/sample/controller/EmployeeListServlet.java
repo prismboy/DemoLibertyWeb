@@ -1,3 +1,6 @@
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
+ */
 package com.ibm.jp.sample.controller;
 
 import java.io.IOException;
@@ -12,22 +15,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ibm.jp.sample.bean.DbSample01Bean;
+import com.ibm.jp.sample.bean.EmployeeListBean;
 import com.ibm.jp.sample.entity.Employee;
 import com.ibm.jp.sample.model.EmployeeModel;
 
 /**
- * Servlet implementation class DbSample01Servlet
+ * 従業員一覧検索画面制御サーブレット<br>
+ * <br>
+ * データソースは共通基底サーブレットクラス(DemoBaseServlet)で定義しています。
+ * 
+ * @author y_akamatsu
+ * @see DemoBaseServlet
+ * 
  */
-@WebServlet({ "/DbSample01Servlet", "/sample01" })
-public class DbSample01Servlet extends DemoBaseServlet {
+@WebServlet("/empList" )
+public class EmployeeListServlet extends DemoBaseServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String _DESTINATION = "/WEB-INF/jsp/sample01.jsp";
+	private static final String _DESTINATION = "/WEB-INF/jsp/employeelist.jsp";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public DbSample01Servlet() {
+	public EmployeeListServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -45,14 +54,14 @@ public class DbSample01Servlet extends DemoBaseServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		DbSample01Bean bean = (DbSample01Bean) request.getAttribute("bean");
+		EmployeeListBean bean = (EmployeeListBean) request.getAttribute("bean");
 		if (bean == null) {
 			String empNo = request.getParameter("empNo");
 			if(!isEmpty(empNo)){
 				doPost(request, response);
 				return;
 			}
-			bean = new DbSample01Bean();
+			bean = new EmployeeListBean();
 			bean.setMessage("");
 			bean.setEmpNo("");
 			bean.setList(new ArrayList<Employee>());
@@ -67,7 +76,7 @@ public class DbSample01Servlet extends DemoBaseServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String empNo = request.getParameter("empNo");
-		DbSample01Bean bean = new DbSample01Bean();
+		EmployeeListBean bean = new EmployeeListBean();
 		if (isEmpty(empNo)) {
 			bean.setMessage("検索条件が未入力です。");
 			bean.setEmpNo("");

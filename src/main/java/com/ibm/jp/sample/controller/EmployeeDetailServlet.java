@@ -1,3 +1,6 @@
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
+ */
 package com.ibm.jp.sample.controller;
 
 import java.io.IOException;
@@ -9,22 +12,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ibm.jp.sample.bean.DbSample01Bean;
-import com.ibm.jp.sample.bean.DbSample02Bean;
+import com.ibm.jp.sample.bean.EmployeeListBean;
+import com.ibm.jp.sample.bean.EmployeeDetailBean;
 import com.ibm.jp.sample.model.EmployeeModel;
 
 /**
- * Servlet implementation class DbSample02Servlet
+ * 従業員詳細情報表示制御サーブレット
+ * <br><br>
+ * データソースは共通基底サーブレットクラス(DemoBaseServlet)で定義しています。
+ * 
+ * @author y_akamatsu
+ * @see DemoBaseServlet
  */
-@WebServlet({ "/DbSample02Servlet", "/sample02" })
-public class DbSample02Servlet extends DemoBaseServlet {
+@WebServlet("/empDetail")
+public class EmployeeDetailServlet extends DemoBaseServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String _DESTINATION = "/WEB-INF/jsp/sample02.jsp";
+	private static final String _DESTINATION = "/WEB-INF/jsp/employeedetail.jsp";
 
 	/**
 	 * @see DemoBaseServlet#DemoBaseServlet()
 	 */
-	public DbSample02Servlet() {
+	public EmployeeDetailServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -35,13 +43,13 @@ public class DbSample02Servlet extends DemoBaseServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		DbSample02Bean bean = new DbSample02Bean();
+		EmployeeDetailBean bean = new EmployeeDetailBean();
 		bean.setMessage("");
 		bean.setEmpNo(request.getParameter("searchEmpNo"));
 		String empNo = request.getParameter("empNo");
 
 		if (isEmpty(empNo)) {
-			DbSample01Bean sample01Bean = new DbSample01Bean();
+			EmployeeListBean sample01Bean = new EmployeeListBean();
 			sample01Bean.setMessage("従業員番号は必須です。");
 			sample01Bean.setEmpNo(bean.getEmpNo());
 			forward(request, response, "/sample01", sample01Bean);

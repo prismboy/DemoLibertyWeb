@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Webアプリケーションサンプル</title>
+<title>サンプルWebアプリケーション</title>
 </head>
 <body>
 <br>
-<font size="+1"><b>Webアプリケーションサンプル</b></font>
+<font size="+1"><b>サンプルWebアプリケーション</b></font>
 <br><br>
 <ul>
-<li><a href="sample01">従業員検索</a>
+<li><a href="empList">従業員検索</a>
+<li><a href="env">ランタイム環境変数</a>
 </ul>
 </body>
 </html>

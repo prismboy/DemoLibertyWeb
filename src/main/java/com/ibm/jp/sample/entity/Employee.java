@@ -1,5 +1,5 @@
-/**
- * 
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
  */
 package com.ibm.jp.sample.entity;
 
@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
+ * EMPLOYEE表エンティティ
+ * 
  * @author y_akamatsu
  *
  */

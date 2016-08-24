@@ -1,5 +1,5 @@
-/**
- * 
+/*
+ * Bluemix Liberty for Java サンプルアプリケーション
  */
 package com.ibm.jp.sample.bean;
 
@@ -8,10 +8,12 @@ import java.io.Serializable;
 import com.ibm.jp.sample.entity.Employee;
 
 /**
+ * 従業員詳細情報表示画面用Beanクラス<br>
+ * 
  * @author y_akamatsu
  *
  */
-public class DbSample02Bean implements Serializable {
+public class EmployeeDetailBean implements Serializable {
 
 	/**
 	 * 
@@ -36,7 +38,7 @@ public class DbSample02Bean implements Serializable {
 	/**
 	 * 
 	 */
-	public DbSample02Bean() {
+	public EmployeeDetailBean() {
 		// TODO Auto-generated constructor stub
 	}
 

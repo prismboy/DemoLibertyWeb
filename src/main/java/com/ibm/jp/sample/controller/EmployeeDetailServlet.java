@@ -34,7 +34,6 @@ public class EmployeeDetailServlet extends DemoBaseServlet {
 	 */
 	public EmployeeDetailServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

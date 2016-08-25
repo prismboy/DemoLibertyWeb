@@ -38,14 +38,12 @@ public class EmployeeListServlet extends DemoBaseServlet {
 	 */
 	public EmployeeListServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
 	}
 
 	/**

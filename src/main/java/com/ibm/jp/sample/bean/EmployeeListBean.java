@@ -41,7 +41,6 @@ public class EmployeeListBean implements Serializable {
 	 * 
 	 */
 	public EmployeeListBean() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public final String getMessage() {

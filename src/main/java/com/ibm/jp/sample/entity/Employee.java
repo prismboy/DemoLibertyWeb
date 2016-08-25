@@ -94,7 +94,6 @@ public class Employee implements Serializable {
 	 * 
 	 */
 	public Employee() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public final String getEmpNo() {

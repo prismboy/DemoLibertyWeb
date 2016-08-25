@@ -4,13 +4,14 @@
 package com.ibm.jp.sample.controller;
 
 import java.io.IOException;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ibm.jp.sample.bean.EnvValsBean;
 
 /**
  * 環境変数表示制御サーブレット<br>
@@ -36,9 +37,10 @@ public class EnvValServlet extends DemoBaseServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Map<String, String> env = System.getenv();
+		EnvValsBean bean = new EnvValsBean();
+		bean.setEnvironment(System.getenv());
 
-		request.setAttribute("bean", env);
+		request.setAttribute("bean", bean);
 		request.getRequestDispatcher(_DESTINATION).forward(request, response);
 	}
 

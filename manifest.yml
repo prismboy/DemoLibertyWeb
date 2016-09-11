@@ -2,7 +2,7 @@ applications:
 - path: target/DemoLibertyWeb.war
   memory: 256M
   instances: 1
-  domain: mybluemix.net
+  domain: au-syd.mybluemix.net
   name: DemoLibertyWeb
   host: DemoLibertyWeb
   disk_quota: 1024M

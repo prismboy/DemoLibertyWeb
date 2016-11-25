@@ -1,3 +1,7 @@
+declared-services:
+  sampleDB:
+    label: dashDB
+    plan: Entry
 applications:
 - path: target/DemoLibertyWeb.war
   memory: 256M

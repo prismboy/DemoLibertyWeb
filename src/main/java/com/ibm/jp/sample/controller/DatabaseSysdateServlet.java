@@ -66,10 +66,10 @@ public class DatabaseSysdateServlet extends DemoBaseServlet {
 		setResponseHeaders(response);
 		PrintWriter pw = response.getWriter();
 		pw.println("<html><head><title>Database System date</title></head>");
-		pw.print("<body><br><br><b>");
+		pw.print("<body><br><br><font size=\"+1\"><b>");
 		Object obj = request.getAttribute("bean");
 		pw.print(obj != null ? obj.toString() : "null");
-		pw.println("</b><br><br><a href=\"javascript:history.back();\">Back to Index</a>");
+		pw.println("</b></font><br><br><a href=\"javascript:history.back();\">Back to Index</a>");
 		pw.println("</body></html>");
 		pw.flush();
 		pw.close();

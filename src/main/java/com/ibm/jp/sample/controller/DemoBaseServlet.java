@@ -75,7 +75,7 @@ public abstract class DemoBaseServlet extends HttpServlet {
 		return data == null || "".equals(data);
 	}
 
-	private void setResponseHeaders(HttpServletResponse response) {
+	protected void setResponseHeaders(HttpServletResponse response) {
 		response.setHeader("cache", "no-cache");
 		response.setHeader("cache-control", "no-cache");
 		response.setDateHeader("Expires", 0);

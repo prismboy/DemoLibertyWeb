@@ -13,6 +13,7 @@
 <ul>
 <li><a href="empList">従業員検索</a>
 <li><a href="env">ランタイム環境変数</a>
+<li><a href="dbSysdate">データベースのシステム日付</a>
 </ul>
 </body>
 </html>

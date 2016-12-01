@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,7 +47,9 @@ public class DatabaseSysdateServlet extends DemoBaseServlet {
 		try {
 			date = DatabaseSysdateModel.getSysdate(dataSource);
 			String formatedDate = sdf.format(date);
-			request.setAttribute("bean", formatedDate);
+			String dbInfo = DatabaseSysdateModel.getDatabaseInfo(dataSource);
+			request.setAttribute("date", formatedDate);
+			request.setAttribute("info", dbInfo);
 		} catch (SQLException e) {
 			throw new ServletException(e);
 		}
@@ -67,9 +70,12 @@ public class DatabaseSysdateServlet extends DemoBaseServlet {
 		PrintWriter pw = response.getWriter();
 		pw.println("<html><head><title>Database System date</title></head>");
 		pw.print("<body><br><br><font size=\"+1\"><b>");
-		Object obj = request.getAttribute("bean");
+		Object obj = request.getAttribute("date");
 		pw.print(obj != null ? obj.toString() : "null");
-		pw.println("</b></font><br><br><a href=\"javascript:history.back();\">Back to Index</a>");
+		pw.println("</b></font><br><br>");
+		pw.println("<b>Database Info</b><br>");
+		pw.println(request.getAttribute("info"));
+		pw.println("<br><br><a href=\"javascript:history.back();\">Back to Index</a>");
 		pw.println("</body></html>");
 		pw.flush();
 		pw.close();

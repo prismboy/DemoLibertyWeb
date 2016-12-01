@@ -4,6 +4,7 @@
 package com.ibm.jp.sample.model;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,5 +39,16 @@ public class DatabaseSysdateModel {
 			connection.close();
 		}
 		return date;
+	}
+
+	public static String getDatabaseInfo(DataSource datasource) throws SQLException {
+		Connection con = datasource.getConnection();
+		DatabaseMetaData dbmd = con.getMetaData();
+		StringBuilder sb = new StringBuilder();
+		sb.append("Database URL: ").append(dbmd.getURL()).append("<br>");
+		sb.append("Database Service: ").append(dbmd.getDatabaseProductName()).append("<br>");
+		sb.append("Database Version: ").append(dbmd.getDatabaseProductVersion()).append("<br>");
+
+		return sb.toString();
 	}
 }
